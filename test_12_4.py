@@ -1,5 +1,6 @@
 import unittest
 import logging
+import traceback
 
 logging.basicConfig(
     level=logging.INFO,
@@ -77,6 +78,7 @@ class RunnerTest(unittest.TestCase):
             self.assertEqual(run_1.distance, 50)
         except:
             logging.warning("Неверная скорость для Runner")
+            logging.warning(traceback.format_exc())
 
     def test_run(self):
         try:
@@ -87,6 +89,7 @@ class RunnerTest(unittest.TestCase):
             logging.info('"test_run" выполнен успешно')
         except:
             logging.warning(f"Неверный тип данных для объекта Runner")
+            logging.warning(traceback.format_exc())
 
 
 if __name__ == '__main__':
